@@ -1,0 +1,11 @@
+body{
+    background: aquamarine;
+}
+
+#important{
+    background: hotpink;
+}
+
+.completed{
+    text-decoration: line-through;
+}

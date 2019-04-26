@@ -2,7 +2,18 @@
 
 h1{
     color: purple;
+    /*border-color:blue;
+    border-width: 5px;
+    border-style: dashed;*/
+    border: 2px solid floralwhite;
 }
 li{
-    color: green;
+    color: oldlace;
+}
+
+body{
+    background: olivedrab;
+    /*background: url(https://www.babybedding.com/images/fabric/gray-woodgrain-fabric_large.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;*/
 }
