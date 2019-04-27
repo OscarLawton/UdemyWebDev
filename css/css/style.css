@@ -1,5 +1,3 @@
-
-
 h1{
     color: purple;
     /*border-color:blue;
@@ -16,4 +14,8 @@ body{
     /*background: url(https://www.babybedding.com/images/fabric/gray-woodgrain-fabric_large.jpg);
     background-repeat: no-repeat;
     background-size: cover;*/
+}
+
+li:nth-of-type(3){
+    background-color: blue;
 }
