@@ -6,8 +6,10 @@ for(var i = -10; i < 19; i++){
 
 //print all even numbers between 10 and 40
 console.log("print out all even numbers from 10 to 40")
-for(var i = 10; i< 40; i+=2){
-    console.log(i)
+for(var i = 10; i< 40; i++){
+    if(i % 2 === 0){
+        console.log(i)
+    }
 }
 
 //print out all odd number between 300 and 333
