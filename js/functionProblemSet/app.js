@@ -12,12 +12,13 @@ console.log(isEven(4));
 function factorial(x){
     if (x > 0){
         for(i = x; i > 1; i--){
-            console.log(i)
             x *= (i-1);
         }
         return x
+    } else if (x === 0 ){
+        return 1;
     } else {
-        return 0;
+        return "you can only find the factorial of positive numbers"
     }
 }
 console.log(factorial(2))
