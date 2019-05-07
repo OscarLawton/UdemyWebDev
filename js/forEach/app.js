@@ -1,5 +1,5 @@
-var colours = ["red","blue","green","yelow","purple"]
+var colours = ["red","blue","green","yellow","purple"]
 
 colours.forEach(function(x){
-    console.log(x.length)
+    console.log(x, x.length)
 });
