@@ -35,7 +35,7 @@ function summArray(array){
 
 //Find the largets number in the array
 function max(array){
-    var tmp = 0
+    var tmp = array[0];
     for(var i = 0; i < array.length; i++){
         if (array[i] > tmp){
             tmp = array[i]
