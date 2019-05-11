@@ -10,3 +10,5 @@ setInterval(function(){
     }
     isPink = !isPink
 }, 100)
+
+document.getElementById("");
