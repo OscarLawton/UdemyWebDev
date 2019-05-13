@@ -5,22 +5,56 @@
         <style>
             body{
                 font-family:Arial, Helvetica, sans-serif;
+                color: white;
+            }
+            #displayWinner{
+                color:hotpink;
+                width: 500px;
+                height: 250px;
+            }
+            #container{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                min-height: 100vh;
+                background-color:darkslategray;
+                width: 500px;
+                height: 500px;
+                margin: 0px auto;
+            }
+            #limit{
+                margin-bottom: 5px;
+            }
+            #limit-btn{
+                margin-bottom: 5px;
             }
         </style>
     </head>
     <body>
-        <h1>Score Keeper</h1>
+        <div id="container">
+            <h1>Score Keeper</h1>
         
         
-        <div id="scoreDisplay"> <h3>0 and 0</h3></div>
-        <h2>playing to 10</h2>
-        <input type="text" name="limit" id="limit">
-        <input id="limit-btn" type="submit" value="Submit">
-        <div>
-            <button id="player1Btn">Player One</button>
-            <button id="player2Btn">Player Two</button>
-            <button id="resetBtn">Reset</button>
+            <div id="scoreDisplay"> <h3>0 and 0</h3></div>
+            <h2>playing to 10</h2>
+  
+                    <input  type="text" name="limit" id="limit" placeholder="">
+                    <input id="limit-btn" type="submit" value="Submit">
+    
+            
+            <div>
+                <button id="player1Btn">Player One</button>
+                <button id="player2Btn">Player Two</button>
+                <button id="resetBtn">Reset</button>
+            </div>
+            <div id="displayWinner">
+        
+            </div>
+           
         </div>
+        
         <script src="./app.js"></script>
     </body>
 </html>
