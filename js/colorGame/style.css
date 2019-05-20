@@ -3,13 +3,16 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     color: white;
 }
-
+h1{
+    text-align: center;
+}
 .square{
     width: 30%;
     background: purple;
     padding-bottom: 30%;
     float: left;
     margin: 1.66%;
+    border-radius: 20px;
 }
 
 #container{
@@ -17,4 +20,8 @@ body{
     margin: 0 auto;
     text-align: center;
     color: white;
+}
+
+#messageContainer{
+   text-align: center;
 }
