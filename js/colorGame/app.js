@@ -17,21 +17,58 @@ var h1 = document.querySelector("h1")
 var resetButton = document.querySelector("#reset");
 var modeButtons = document.querySelectorAll(".mode");
 
-for(var i = 0; i < modeButtons.length; i++){
-    modeButtons[i].addEventListener("click", function(){
-        modeButtons[0].classList.remove("selected");
-        modeButtons[1].classList.remove("selected");
-        this.classList.add("selected");
+init();
 
-        //this.textContent === "Easy" ? numOfsquares = 3: numOfsquares = 6;
-        if(this.textContent === "Easy"){
-            numOfsquares = 3;
-        } else {
-            numOfsquares = 6;
-        }
-        reset();
+function init(){
+   
+    setupModeButtons();
+    setupSquares();
+    reset();
+    
+}
 
-    });
+function setupModeButtons(){
+    for(var i = 0; i < modeButtons.length; i++){
+        modeButtons[i].addEventListener("click", function(){
+            modeButtons[0].classList.remove("selected");
+            modeButtons[1].classList.remove("selected");
+            this.classList.add("selected");
+    
+            //this.textContent === "Easy" ? numOfsquares = 3: numOfsquares = 6;
+            if(this.textContent === "Easy"){
+                numOfsquares = 3;
+            } else {
+                numOfsquares = 6;
+            }
+            reset();
+    
+        });
+    }
+}
+
+function setupSquares(){
+    for(var i = 0; i<colors.length; i++){
+        //add initia colors to squares
+        squares[i].style.backgroundColor = colors[i];
+        
+        //add click listeners to squares
+        squares[i].addEventListener("click", function(){
+            var clickedColor = this.style.backgroundColor;
+            console.log(clickedColor)
+            console.log(pickedColor)
+            if(clickedColor === pickedColor){
+                messageDisplay.textContent = "Correct";
+                messageDisplay.style.textAlign = "center";
+                h1.style.backgroundColor = pickedColor
+                changeColors(pickedColor);
+                resetButton.textContent = "Play Again?";
+                console.log("correct");
+            } else {
+                messageDisplay.textContent = "Try Again"
+                this.style.backgroundColor = "#232323";
+            }
+        });
+    }
 }
 
 function reset(){
@@ -86,28 +123,7 @@ resetButton.addEventListener("click", function(){
 })
 colorDisplay.textContent = pickedColor;
 
-for(var i = 0; i<colors.length; i++){
-    //add initia colors to squares
-    squares[i].style.backgroundColor = colors[i];
-    
-    //add click listeners to squares
-    squares[i].addEventListener("click", function(){
-        var clickedColor = this.style.backgroundColor;
-        console.log(clickedColor)
-        console.log(pickedColor)
-        if(clickedColor === pickedColor){
-            messageDisplay.textContent = "Correct";
-            messageDisplay.style.textAlign = "center";
-            h1.style.backgroundColor = pickedColor
-            changeColors(pickedColor);
-            resetButton.textContent = "Play Again?";
-            console.log("correct");
-        } else {
-            messageDisplay.textContent = "Try Again"
-            this.style.backgroundColor = "#232323";
-        }
-    });
-}
+
 function generateRandomColors(num){
     var array = [];
     for(var i = 0; i < num; i++){
