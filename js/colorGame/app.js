@@ -15,10 +15,43 @@ var colorDisplay = document.getElementById("colorDisplay");
 var messageDisplay = document.getElementById("message");
 var h1 = document.querySelector("h1")
 var resetButton = document.querySelector("#reset");
-var easyButton = document.querySelector("#easyBtn");
-var hardButton = document.querySelector("#hardBtn");
+var modeButtons = document.querySelectorAll(".mode");
 
-easyButton.addEventListener("click", function(){
+for(var i = 0; i < modeButtons.length; i++){
+    modeButtons[i].addEventListener("click", function(){
+        modeButtons[0].classList.remove("selected");
+        modeButtons[1].classList.remove("selected");
+        this.classList.add("selected");
+
+        //this.textContent === "Easy" ? numOfsquares = 3: numOfsquares = 6;
+        if(this.textContent === "Easy"){
+            numOfsquares = 3;
+        } else {
+            numOfsquares = 6;
+        }
+        reset();
+
+    });
+}
+
+function reset(){
+    colors = generateRandomColors(numOfsquares);
+    pickedColor = pickColor();
+    colorDisplay.textContent = pickedColor;
+    resetButton.textContent = "New Colors?"
+    messageDisplay.textContent = "";
+    for(var i = 0; i < squares.length; i++){
+        if(colors[i]){
+            squares[i].style.display = "block";
+            squares[i].style.background = colors[i];
+        } else {
+            squares[i].style.display = "none";
+        }
+    }
+    h1.style.background = "steelblue"
+}
+
+/*easyButton.addEventListener("click", function(){
     easyButton.classList.add("selected");
     hardButton.classList.remove("selected");
     numOfsquares = 3;
@@ -46,15 +79,10 @@ hardButton.addEventListener("click", function(){
             squares[i].style.display = "block";
         }
     }
-})
+})*/
+
 resetButton.addEventListener("click", function(){
-    colors = generateRandomColors(numOfsquares);
-    pickedColor = pickColor();
-    colorDisplay.textContent = pickedColor;
-    for(var i = 0; i < squares.length; i++){
-        squares[i].style.background = colors[i];
-    }
-    h1.style.background = "steelblue"
+    reset();
 })
 colorDisplay.textContent = pickedColor;
 
